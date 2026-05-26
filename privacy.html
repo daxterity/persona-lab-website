@@ -4,144 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Persona Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f0f0f;
-      color: #d0d0d0;
-      line-height: 1.7;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 32px;
-      border-bottom: 1px solid #1e1e1e;
-    }
-
-    header img { height: 40px; width: auto; }
-    header a { color: #888; text-decoration: none; font-size: 0.9rem; }
-    header a:hover { color: #f0f0f0; }
-
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 32px 80px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #f0f0f0;
-      margin-bottom: 8px;
-    }
-
-    .effective {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #f0f0f0;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
-
-    p { margin-bottom: 14px; font-size: 0.95rem; }
-
-    ul {
-      margin: 8px 0 14px 20px;
-      font-size: 0.95rem;
-    }
-
-    ul li { margin-bottom: 6px; }
-
-    a { color: #f9a825; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.8rem;
-      color: #555;
-      border-top: 1px solid #1a1a1a;
-    }
-
-    footer a { color: #777; text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #aaa; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #020F46; --teal: #00A8B5; --white: #ffffff; }
+    body { font-family: 'Satoshi', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+    .bg-mesh { position: fixed; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 10% 20%, rgba(91,17,204,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 90% 80%, rgba(18,76,255,0.10) 0%, transparent 60%), var(--navy); pointer-events: none; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; background: rgba(2,15,70,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { height: 36px; }
+    .nav-back { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .rainbow-divider { height: 2px; background: linear-gradient(90deg, #FF1A1A, #FFA300, #FFD21F, #12B24B, #00A8B5, #124CFF, #5B11CC); opacity: 0.4; border: none; }
+    .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 120px 48px 100px; }
+    .doc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .doc-title { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .doc-meta { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 24px; margin-top: 56px; margin-bottom: 16px; letter-spacing: -0.01em; }
+    h3 { font-size: 16px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; color: rgba(255,255,255,0.85); }
+    p { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+    ul { list-style: none; margin-bottom: 16px; }
+    ul li { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); padding-left: 20px; position: relative; margin-bottom: 8px; }
+    ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+    .contact-block { margin-top: 16px; padding: 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; border-left: 3px solid var(--teal); }
+    .contact-block p { margin-bottom: 8px; }
+    footer { position: relative; z-index: 1; padding: 40px 48px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; }
+    @media (max-width: 768px) { nav { padding: 16px 24px; } .container { padding: 100px 24px 80px; } footer { padding: 32px 24px; flex-direction: column; } }
   </style>
 </head>
 <body>
+<div class="bg-mesh"></div>
+<nav>
+  <a href="index.html"><img src="Persona-lab-logo.png" alt="Persona Lab" class="nav-logo" /></a>
+  <a href="index.html" class="nav-back">Back to Home</a>
+</nav>
+<hr class="rainbow-divider" style="position:relative;z-index:1;margin-top:76px;" />
+<div class="container">
+  <p class="doc-label">Legal</p>
+  <h1 class="doc-title">Privacy Policy</h1>
+  <p class="doc-meta">Effective Date: 27 May 2026 &nbsp;·&nbsp; Last Updated: 27 May 2026</p>
 
-  <header>
-    <a href="index.html"><img src="Persona-lab-logo.png" alt="Persona Lab" /></a>
-    <a href="index.html">&larr; Back</a>
-  </header>
+  <h2>1. Introduction</h2>
+  <p>Persona Lab ("we", "our", or "us") is a sole trader business operating in Australia. This Privacy Policy explains how we handle information when you use our applications ("our applications" or "the app").</p>
+  <p>We are committed to protecting your privacy. This policy is written in plain language so you understand exactly what happens with your data.</p>
 
-  <main>
-    <h1>Privacy Policy</h1>
-    <p class="effective">Effective date: 27 May 2026</p>
+  <h2>2. What Information We Collect</h2>
+  <h3>2.1 Account Information</h3>
+  <p>When you create an account, we collect your name, email address, and authentication details provided through your chosen login method (such as Google or Apple). This information is used solely to manage your account and subscription.</p>
+  <h3>2.2 Subscription and Billing</h3>
+  <p>Subscription payments are processed through the relevant app store platform (Google Play or Apple App Store). We do not collect or store your payment card details. Billing is managed entirely by the platform through which you subscribed.</p>
+  <h3>2.3 Conversation Data</h3>
+  <p>Conversations within our applications are session-based. This means your conversations are not stored on our servers after your session ends. Once you close the application, your conversation history is not retained.</p>
+  <p>Note: Specific applications within the Persona Lab ecosystem may offer optional features that store conversation history. Where this is the case, it will be clearly disclosed within that application prior to enabling the feature.</p>
+  <h3>2.4 Usage Data</h3>
+  <p>We may collect anonymous, aggregated usage data to help us understand how our applications are used and to improve them. This data cannot be used to identify you personally.</p>
+  <h3>2.5 Device Information</h3>
+  <p>We may collect basic device information such as device type and operating system version for the purpose of maintaining app compatibility and performance. This information is not linked to your identity.</p>
 
-    <p>This Privacy Policy explains how Persona Lab ("we", "us", "our") handles information when you use the Dazza and Shazza applications ("the apps").</p>
+  <h2>3. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, operate, and maintain our applications</li>
+    <li>Manage your account and subscription status</li>
+    <li>Respond to support requests</li>
+    <li>Improve application performance and user experience</li>
+    <li>Meet our legal obligations</li>
+  </ul>
+  <p>We do not sell your personal information to third parties. We do not use your information for advertising purposes.</p>
 
-    <h2>1. Information We Collect</h2>
-    <p>When you use the apps, we collect:</p>
-    <ul>
-      <li><strong>Message content:</strong> The text messages you send within the app. These are sent to our backend server and forwarded to the Anthropic API to generate character responses.</li>
-      <li><strong>Usage data:</strong> Basic app usage information such as session activity, collected to understand how the apps are used and to improve performance.</li>
-    </ul>
-    <p>We do not collect your name, email address, or any account information unless you create an account (if applicable).</p>
+  <h2>4. AI-Generated Content</h2>
+  <p>Our applications use artificial intelligence to generate responses. All content generated by our applications is AI-generated and does not constitute professional advice of any kind, including but not limited to medical, legal, financial, or psychological advice.</p>
+  <p>Conversations are processed through the Anthropic API. Anthropic's privacy practices apply to the processing of your conversation content. We encourage you to review Anthropic's Privacy Policy at anthropic.com.</p>
 
-    <h2>2. How We Use Your Information</h2>
-    <ul>
-      <li>To generate character responses via the Anthropic API</li>
-      <li>To maintain and improve the apps</li>
-      <li>To diagnose and fix technical issues</li>
-    </ul>
-    <p>We do not use your messages to train AI models. We do not sell your data to third parties.</p>
+  <h2>5. Data Storage and Security</h2>
+  <p>Account information is stored securely using Supabase, a third-party cloud infrastructure provider. We apply industry-standard security measures to protect your data.</p>
+  <p>Session conversation data is not stored beyond your active session. No conversation logs are retained on our servers.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The apps use the following third-party services:</p>
-    <ul>
-      <li><strong>Anthropic:</strong> Your messages are sent to the Anthropic API to generate responses. Anthropic processes this data in accordance with their <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
-      <li><strong>Railway:</strong> Our backend servers are hosted on Railway. Data in transit passes through Railway's infrastructure.</li>
-    </ul>
+  <h2>6. Third-Party Services</h2>
+  <p>Our applications integrate with the following third-party services:</p>
+  <ul>
+    <li>Anthropic: AI model provider for conversation processing</li>
+    <li>Supabase: Account and authentication data storage</li>
+    <li>Google Play / Apple App Store: Subscription billing and app distribution</li>
+  </ul>
+  <p>Each of these services operates under their own privacy policies. We are not responsible for the privacy practices of third-party services.</p>
 
-    <h2>4. Data Retention</h2>
-    <p>Message content is not stored on our servers beyond the duration of a single conversation session. We do not maintain conversation history between sessions.</p>
+  <h2>7. Children's Privacy</h2>
+  <p>Our applications are intended for a general audience. We do not knowingly collect personal information from children under the age of 13. Certain applications within the Persona Lab ecosystem may be designated for users aged 18 and over. Age restrictions will be clearly communicated within those applications and their store listings.</p>
+  <p>If you believe a child has provided us with personal information, please contact us and we will take steps to remove that information.</p>
 
-    <h2>5. Children's Privacy</h2>
-    <p>The apps are not directed at children under 13 years of age. We do not knowingly collect personal information from children under 13. If you become aware that a child under 13 has provided us with personal information, please contact us at the address below.</p>
+  <h2>8. Your Rights</h2>
+  <p>As an Australian resident, you have rights under the Privacy Act 1988 (Cth) and the Australian Privacy Principles, including the right to:</p>
+  <ul>
+    <li>Access the personal information we hold about you</li>
+    <li>Request correction of inaccurate information</li>
+    <li>Request deletion of your account and associated data</li>
+    <li>Lodge a complaint with the Office of the Australian Information Commissioner (OAIC)</li>
+  </ul>
+  <p>To exercise any of these rights, please contact us using the details below.</p>
 
-    <h2>6. Age-Gated Content</h2>
-    <p>Some features of the apps may include adult content (17+ mode). Access to such features is restricted to users who are 17 years of age or older.</p>
+  <h2>9. Data Retention</h2>
+  <p>Account information is retained for as long as your account is active. If you delete your account, your personal information will be removed within 30 days.</p>
+  <p>Session conversation data is not retained beyond your active session.</p>
 
-    <h2>7. Security</h2>
-    <p>We take reasonable steps to protect the information transmitted through the apps. All communication between the apps and our backend servers uses HTTPS encryption.</p>
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this document. Continued use of our applications after any changes constitutes your acceptance of the updated policy.</p>
 
-    <h2>8. Your Rights</h2>
-    <p>Depending on your location, you may have rights to access, correct, or delete personal information we hold about you. To make such a request, please contact us using the details below.</p>
-
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will post the updated policy at this URL with a revised effective date. Continued use of the apps after changes are posted constitutes acceptance of the updated policy.</p>
-
-    <h2>10. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
-    <p><a href="mailto:daxterity@gmail.com">daxterity@gmail.com</a></p>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 Persona Lab &nbsp;|&nbsp;
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
-    </p>
-  </footer>
-
+  <h2>11. Contact Us</h2>
+  <p>If you have questions about this Privacy Policy or wish to exercise your privacy rights, please contact us at:</p>
+  <div class="contact-block">
+    <p><strong>Persona Lab</strong></p>
+    <p>Trading as a sole trader, Australia</p>
+    <p>Email: <a href="mailto:admin@personalab.com.au" style="color: var(--teal); text-decoration: none;">admin@personalab.com.au</a></p>
+    <p>ABN: 24 979 380 416</p>
+  </div>
+</div>
+<hr class="rainbow-divider" style="position:relative;z-index:1;" />
+<footer>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="terms.html">User Agreement</a></li>
+  </ul>
+  <p class="footer-copy">2026 Persona Lab. All rights reserved.</p>
+</footer>
 </body>
 </html>

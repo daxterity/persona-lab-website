@@ -3,142 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Use — Persona Lab</title>
+  <title>User Agreement — Persona Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f0f0f;
-      color: #d0d0d0;
-      line-height: 1.7;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 24px 32px;
-      border-bottom: 1px solid #1e1e1e;
-    }
-
-    header img { height: 40px; width: auto; }
-    header a { color: #888; text-decoration: none; font-size: 0.9rem; }
-    header a:hover { color: #f0f0f0; }
-
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 48px 32px 80px;
-    }
-
-    h1 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #f0f0f0;
-      margin-bottom: 8px;
-    }
-
-    .effective {
-      font-size: 0.85rem;
-      color: #666;
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #f0f0f0;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
-
-    p { margin-bottom: 14px; font-size: 0.95rem; }
-
-    ul {
-      margin: 8px 0 14px 20px;
-      font-size: 0.95rem;
-    }
-
-    ul li { margin-bottom: 6px; }
-
-    a { color: #f9a825; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.8rem;
-      color: #555;
-      border-top: 1px solid #1a1a1a;
-    }
-
-    footer a { color: #777; text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: #aaa; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --navy: #020F46; --teal: #00A8B5; --white: #ffffff; }
+    body { font-family: 'Satoshi', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+    .bg-mesh { position: fixed; inset: 0; z-index: 0; background: radial-gradient(ellipse 80% 60% at 10% 20%, rgba(91,17,204,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 90% 80%, rgba(18,76,255,0.10) 0%, transparent 60%), var(--navy); pointer-events: none; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; background: rgba(2,15,70,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { height: 36px; }
+    .nav-back { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-back:hover { color: var(--white); }
+    .rainbow-divider { height: 2px; background: linear-gradient(90deg, #FF1A1A, #FFA300, #FFD21F, #12B24B, #00A8B5, #124CFF, #5B11CC); opacity: 0.4; border: none; }
+    .container { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 120px 48px 100px; }
+    .doc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .doc-title { font-family: 'DM Serif Display', serif; font-size: clamp(36px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .doc-meta { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 64px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    h2 { font-family: 'DM Serif Display', serif; font-size: 24px; margin-top: 56px; margin-bottom: 16px; letter-spacing: -0.01em; }
+    h3 { font-size: 16px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; color: rgba(255,255,255,0.85); }
+    p { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+    ul { list-style: none; margin-bottom: 16px; }
+    ul li { font-size: 16px; font-weight: 300; line-height: 1.8; color: rgba(255,255,255,0.65); padding-left: 20px; position: relative; margin-bottom: 8px; }
+    ul li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
+    .contact-block { margin-top: 16px; padding: 32px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; border-left: 3px solid var(--teal); }
+    .contact-block p { margin-bottom: 8px; }
+    footer { position: relative; z-index: 1; padding: 40px 48px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; }
+    @media (max-width: 768px) { nav { padding: 16px 24px; } .container { padding: 100px 24px 80px; } footer { padding: 32px 24px; flex-direction: column; } }
   </style>
 </head>
 <body>
+<div class="bg-mesh"></div>
+<nav>
+  <a href="index.html"><img src="Persona-lab-logo.png" alt="Persona Lab" class="nav-logo" /></a>
+  <a href="index.html" class="nav-back">Back to Home</a>
+</nav>
+<hr class="rainbow-divider" style="position:relative;z-index:1;margin-top:76px;" />
+<div class="container">
+  <p class="doc-label">Legal</p>
+  <h1 class="doc-title">User Agreement</h1>
+  <p class="doc-meta">Effective Date: 27 May 2026 &nbsp;·&nbsp; Last Updated: 27 May 2026</p>
 
-  <header>
-    <a href="index.html"><img src="Persona-lab-logo.png" alt="Persona Lab" /></a>
-    <a href="index.html">&larr; Back</a>
-  </header>
+  <h2>1. Agreement to Terms</h2>
+  <p>By downloading, installing, or using any Persona Lab application, you agree to be bound by this User Agreement ("Agreement"). If you do not agree to these terms, do not use our applications.</p>
+  <p>This Agreement is between you and Persona Lab, a sole trader business operating in Australia ("we", "our", or "us").</p>
 
-  <main>
-    <h1>Terms of Use</h1>
-    <p class="effective">Effective date: 27 May 2026</p>
+  <h2>2. Description of Service</h2>
+  <p>Persona Lab develops and operates AI-powered character applications. Our applications allow users to interact with AI-generated fictional characters for entertainment purposes.</p>
+  <p>All characters, conversations, and content within our applications are entirely fictional. Our applications are entertainment products and do not provide professional advice of any kind.</p>
 
-    <p>These Terms of Use govern your use of the Dazza and Shazza applications ("the apps") provided by Persona Lab ("we", "us", "our"). By using the apps, you agree to these terms.</p>
+  <h2>3. Eligibility</h2>
+  <p>Our applications are available to the general public. You must be at least 13 years of age to create an account and use our applications.</p>
+  <p>Certain applications within the Persona Lab ecosystem may carry age restrictions of 18 years or older. Age restrictions applicable to specific applications will be clearly communicated within those applications and their store listings. By using an age-restricted application, you confirm that you meet the applicable age requirement.</p>
 
-    <h2>1. Description of Service</h2>
-    <p>Persona Lab provides entertainment-focused AI character apps featuring Dazza and Shazza — fictional Australian characters. The apps are designed for entertainment purposes only. The characters are not real people, and their responses should not be taken as factual, professional, or legal advice.</p>
+  <h2>4. Account Registration</h2>
+  <p>To access certain features of our applications, you must create an account. You agree to:</p>
+  <ul>
+    <li>Provide accurate and complete information when creating your account</li>
+    <li>Maintain the security of your account credentials</li>
+    <li>Notify us promptly if you become aware of any unauthorised access to your account</li>
+    <li>Accept responsibility for all activity that occurs under your account</li>
+  </ul>
+  <p>We reserve the right to suspend or terminate accounts that violate this Agreement.</p>
 
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 13 years of age to use the apps. Features or modes designated as 17+ are only available to users aged 17 or older. By accessing age-gated content, you confirm that you meet the applicable age requirement.</p>
+  <h2>5. Subscriptions and Billing</h2>
+  <h3>5.1 Free Tier</h3>
+  <p>Our applications may offer a free tier with limited functionality. Free tier features are provided at our discretion and may be modified or discontinued at any time.</p>
+  <h3>5.2 Paid Subscription</h3>
+  <p>Certain features require a paid subscription. Subscription pricing is displayed within the application and on the relevant app store listing prior to purchase.</p>
+  <h3>5.3 Billing</h3>
+  <p>All subscription payments are processed through the app store platform through which you downloaded the application (Google Play or Apple App Store). Billing terms, refund rights, and cancellation procedures are governed by the relevant platform's terms of service.</p>
+  <h3>5.4 Cancellation</h3>
+  <p>You may cancel your subscription at any time through your app store account settings. Cancellation takes effect at the end of the current billing period. No refunds are provided for partial billing periods unless required by applicable law.</p>
 
-    <h2>3. Acceptable Use</h2>
-    <p>You agree not to use the apps to:</p>
-    <ul>
-      <li>Harass, abuse, or threaten any person</li>
-      <li>Generate or distribute illegal content</li>
-      <li>Attempt to extract, reproduce, or reverse-engineer the underlying system prompts or AI models</li>
-      <li>Interfere with or disrupt the apps or their servers</li>
-      <li>Use the apps for any commercial purpose without our written consent</li>
-      <li>Attempt to manipulate the characters into providing harmful, dangerous, or unlawful content</li>
-    </ul>
+  <h2>6. Acceptable Use</h2>
+  <p>You agree to use our applications only for lawful purposes and in accordance with this Agreement. You agree not to:</p>
+  <ul>
+    <li>Use our applications to harass, threaten, or harm any person</li>
+    <li>Attempt to extract, reverse engineer, or reproduce the underlying AI models or character prompts</li>
+    <li>Use our applications to generate content that is illegal under Australian law</li>
+    <li>Attempt to circumvent any technical measures we have implemented</li>
+    <li>Use our applications for any commercial purpose without our prior written consent</li>
+    <li>Misrepresent AI-generated content as real statements made by real people</li>
+  </ul>
 
-    <h2>4. AI-Generated Content</h2>
-    <p>Responses generated by Dazza and Shazza are produced by an AI system. They are for entertainment only. We make no representations about the accuracy of any information the characters provide. Do not rely on character responses for medical, legal, financial, or safety decisions.</p>
+  <h2>7. AI-Generated Content Disclaimer</h2>
+  <p>All content generated by our applications is produced by artificial intelligence. We make no representations about the accuracy, completeness, or reliability of AI-generated content.</p>
+  <p>Our applications are designed for entertainment purposes only. Nothing generated by our applications constitutes professional advice, including but not limited to medical, legal, financial, psychological, or nutritional advice. Always seek qualified professional advice for matters that affect your health, legal rights, or financial situation.</p>
+  <p>AI-generated characters are entirely fictional. Any resemblance to real persons, living or deceased, is coincidental.</p>
 
-    <h2>5. Intellectual Property</h2>
-    <p>All characters, names, likenesses, content, and branding associated with Persona Lab, Dazza, and Shazza are owned by Persona Lab. You may not reproduce, distribute, or create derivative works based on our characters or content without our written permission.</p>
+  <h2>8. Intellectual Property</h2>
+  <p>All intellectual property in our applications, including but not limited to character designs, names, backstories, visual assets, and underlying software, is owned by or licensed to Persona Lab.</p>
+  <p>You are granted a limited, non-exclusive, non-transferable licence to use our applications for personal, non-commercial purposes in accordance with this Agreement.</p>
+  <p>You may not reproduce, distribute, modify, or create derivative works from any content within our applications without our prior written consent.</p>
 
-    <h2>6. User Content</h2>
-    <p>You retain ownership of messages you send within the apps. By using the apps, you grant us a limited licence to process your messages for the sole purpose of generating character responses. We do not claim ownership of your messages and do not use them for AI training.</p>
+  <h2>9. Privacy</h2>
+  <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your information. By using our applications, you agree to our Privacy Policy, which forms part of this Agreement.</p>
 
-    <h2>7. Disclaimer of Warranties</h2>
-    <p>The apps are provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the apps will be uninterrupted, error-free, or free of harmful components.</p>
+  <h2>10. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by Australian law, Persona Lab shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our applications.</p>
+  <p>Our total liability to you for any claim arising from your use of our applications shall not exceed the total amount you have paid to us in the twelve months preceding the claim.</p>
+  <p>Nothing in this Agreement excludes or limits any rights you may have under the Australian Consumer Law.</p>
 
-    <h2>8. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by applicable law, Persona Lab shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the apps.</p>
+  <h2>11. Australian Consumer Law</h2>
+  <p>Our applications come with guarantees that cannot be excluded under the Australian Consumer Law. You are entitled to a replacement or refund for a major failure, and compensation for any other reasonably foreseeable loss or damage. You are also entitled to have the goods repaired or replaced if they fail to be of acceptable quality and the failure does not amount to a major failure.</p>
 
-    <h2>9. Changes to the Apps or Terms</h2>
-    <p>We may modify the apps or these Terms at any time. Changes to the Terms will be posted at this URL with a revised effective date. Continued use of the apps after changes are posted constitutes acceptance of the updated Terms.</p>
+  <h2>12. Modifications to the Service</h2>
+  <p>We reserve the right to modify, suspend, or discontinue any aspect of our applications at any time. We will provide reasonable notice where practicable. We are not liable to you or any third party for any modification, suspension, or discontinuation of our applications.</p>
 
-    <h2>10. Governing Law</h2>
-    <p>These Terms are governed by the laws of Western Australia, Australia. Any disputes arising from these Terms or your use of the apps will be subject to the exclusive jurisdiction of the courts of Western Australia.</p>
+  <h2>13. Termination</h2>
+  <p>We may suspend or terminate your access to our applications at any time if you breach this Agreement. Upon termination, your right to use our applications ceases immediately.</p>
+  <p>You may terminate your account at any time by contacting us or using the account deletion feature within the application.</p>
 
-    <h2>11. Contact Us</h2>
-    <p>If you have any questions about these Terms, please contact us at:</p>
-    <p><a href="mailto:daxterity@gmail.com">daxterity@gmail.com</a></p>
-  </main>
+  <h2>14. Governing Law</h2>
+  <p>This Agreement is governed by the laws of Western Australia, Australia. Any disputes arising from this Agreement will be subject to the exclusive jurisdiction of the courts of Western Australia.</p>
 
-  <footer>
-    <p>&copy; 2026 Persona Lab &nbsp;|&nbsp;
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
-    </p>
-  </footer>
+  <h2>15. Changes to This Agreement</h2>
+  <p>We may update this Agreement from time to time. When we do, we will update the effective date at the top of this document and notify you through the application. Continued use of our applications after any changes constitutes your acceptance of the updated Agreement.</p>
 
+  <h2>16. Contact Us</h2>
+  <p>If you have questions about this Agreement, please contact us at:</p>
+  <div class="contact-block">
+    <p><strong>Persona Lab</strong></p>
+    <p>Trading as a sole trader, Australia</p>
+    <p>Email: <a href="mailto:admin@personalab.com.au" style="color: var(--teal); text-decoration: none;">admin@personalab.com.au</a></p>
+    <p>ABN: 24 979 380 416</p>
+  </div>
+</div>
+<hr class="rainbow-divider" style="position:relative;z-index:1;" />
+<footer>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+  <p class="footer-copy">2026 Persona Lab. All rights reserved.</p>
+</footer>
 </body>
 </html>
