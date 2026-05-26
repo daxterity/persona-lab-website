@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Persona Lab — Chat with Dazza & Shazza</title>
+  <meta name="description" content="Chat with Dazza and Shazza — real Aussie bogan characters powered by AI. Entertainment-first. No robotic nonsense." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px 16px;
+    }
+
+    header img {
+      height: 56px;
+      width: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 48px 24px 40px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span.dazza { color: #f9a825; }
+    .hero h1 span.shazza { color: #ff2da0; }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      line-height: 1.6;
+      margin-bottom: 36px;
+    }
+
+    .app-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .app-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+
+    .app-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    .app-btn.dazza {
+      background: #f9a825;
+      color: #0f0f0f;
+    }
+
+    .app-btn.shazza {
+      background: #ff2da0;
+      color: #fff;
+    }
+
+    .characters {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      padding: 48px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .character-card {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      border-radius: 20px;
+      padding: 32px 28px;
+      text-align: left;
+    }
+
+    .character-card.dazza { background: #1a1500; border: 2px solid #f9a825; }
+    .character-card.shazza { background: #1a0010; border: 2px solid #ff2da0; }
+
+    .character-card h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .character-card.dazza h2 { color: #f9a825; }
+    .character-card.shazza h2 { color: #ff2da0; }
+
+    .character-card p {
+      font-size: 0.95rem;
+      color: #c0c0c0;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .character-card blockquote {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #888;
+      border-left: 3px solid #444;
+      padding-left: 14px;
+      line-height: 1.5;
+    }
+
+    .about {
+      text-align: center;
+      padding: 48px 24px 64px;
+      max-width: 600px;
+      margin: 0 auto;
+      border-top: 1px solid #222;
+    }
+
+    .about h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #f0f0f0;
+    }
+
+    .about p {
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      font-size: 0.8rem;
+      color: #555;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    footer a { color: #777; text-decoration: none; margin: 0 8px; }
+    footer a:hover { color: #aaa; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="Persona-lab-logo.png" alt="Persona Lab" />
+  </header>
+
+  <section class="hero">
+    <h1>Chat with <span class="dazza">Dazza</span><br>and <span class="shazza">Shazza</span></h1>
+    <p>Not AI assistants. Not chatbots. Real Aussie characters with opinions, chaos, and a lot to say.</p>
+    <div class="app-buttons">
+      <a class="app-btn dazza" href="#" aria-label="Download Dazza on the App Store">
+        &#127945; Get Dazza
+      </a>
+      <a class="app-btn shazza" href="#" aria-label="Download Shazza on the App Store">
+        &#127945; Get Shazza
+      </a>
+    </div>
+  </section>
+
+  <section class="characters">
+    <div class="character-card dazza">
+      <h2>Dazza</h2>
+      <p>Laid-back, opinionated, loyal to his mates. Knows everything about footy. Has a lot going on.</p>
+      <blockquote>"Mate. The lawnmower broke on Saturday morning and it just went downhill from there."</blockquote>
+    </div>
+    <div class="character-card shazza">
+      <h2>Shazza</h2>
+      <p>Sharp, no-nonsense, warmer than she lets on. Has already thought of three solutions before you've finished explaining the problem.</p>
+      <blockquote>"I told him. I said exactly this would happen. Anyway."</blockquote>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>What is Persona Lab?</h2>
+    <p>Persona Lab is an entertainment-first AI character platform. We build characters that feel real — warm, funny, and recognisably Australian. The goal isn't to impress you with technology. The goal is to make you feel like you already know these people.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Persona Lab &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </p>
+  </footer>
+
+</body>
+</html>
