@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Persona Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Satoshi:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #020F46;
+      --navy-mid: #081a6e;
+      --red: #FF1A1A;
+      --orange: #FFA300;
+      --yellow: #FFD21F;
+      --green: #12B24B;
+      --teal: #00A8B5;
+      --blue: #124CFF;
+      --purple: #5B11CC;
+      --white: #ffffff;
+      --off-white: #f0f2f8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Satoshi', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(91,17,204,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 80%, rgba(18,76,255,0.10) 0%, transparent 60%),
+        var(--navy);
+      pointer-events: none;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      background: rgba(2,15,70,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { height: 36px; }
+    .nav-back {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--white); }
+    .rainbow-divider {
+      height: 2px;
+      background: linear-gradient(90deg, #FF1A1A, #FFA300, #FFD21F, #12B24B, #00A8B5, #124CFF, #5B11CC);
+      opacity: 0.4;
+      border: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 48px 100px;
+    }
+    .doc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .doc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .doc-intro {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* FAQ accordion */
+    details {
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    details:first-of-type {
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      cursor: pointer;
+      list-style: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--white);
+      gap: 24px;
+      transition: color 0.2s;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+';
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--teal);
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+    details[open] summary::after {
+      transform: rotate(45deg);
+    }
+    details[open] summary {
+      color: var(--teal);
+    }
+    .faq-answer {
+      padding-bottom: 24px;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.6);
+    }
+    .faq-answer a {
+      color: var(--teal);
+      text-decoration: none;
+    }
+    .faq-answer a:hover { text-decoration: underline; }
+
+    .support-block {
+      margin-top: 64px;
+      padding: 40px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      border-top: 3px solid var(--teal);
+      text-align: center;
+    }
+    .support-block p {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .support-block a {
+      color: var(--teal);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .support-block a:hover { text-decoration: underline; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      padding: 40px 48px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy { color: rgba(255,255,255,0.2); font-size: 12px; }
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .container { padding: 100px 24px 80px; }
+      footer { padding: 32px 24px; flex-direction: column; }
+      summary { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-mesh"></div>
+
+<nav>
+  <a href="index.html"><img src="DarkLogo.png" alt="Persona Lab" class="nav-logo" /></a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
+
+<hr class="rainbow-divider" style="position:relative;z-index:1;margin-top:76px;" />
+
+<div class="container">
+  <p class="doc-label">Support</p>
+  <h1 class="doc-title">Frequently Asked Questions</h1>
+  <p class="doc-intro">Everything you need to know about Dazza, Shazza, and Persona Lab.</p>
+
+  <details>
+    <summary>Are Dazza and Shazza real people?</summary>
+    <p class="faq-answer">Nah — they're AI characters built by Persona Lab. But we reckon they're pretty bloody convincing.</p>
+  </details>
+
+  <details>
+    <summary>What can I ask them about?</summary>
+    <p class="faq-answer">Anything really — but they shine on Aussie sport, weather, lifestyle, and just having a yarn. Premium subscribers get live web search so they're across what's happening right now.</p>
+  </details>
+
+  <details>
+    <summary>What's the difference between free and premium?</summary>
+    <p class="faq-answer">Free tier gets you the full character experience. Premium unlocks live web search, real time sport scores, weather, and news — plus no ads.</p>
+  </details>
+
+  <details>
+    <summary>Why won't Shazza talk about the shed?</summary>
+    <p class="faq-answer">No comment. Move on darl.</p>
+  </details>
+
+  <details>
+    <summary>The app isn't working properly — what do I do?</summary>
+    <p class="faq-answer">Flick us an email at <a href="mailto:support@personalab.com.au">support@personalab.com.au</a> and we'll sort it out.</p>
+  </details>
+
+  <details>
+    <summary>How do I cancel my subscription?</summary>
+    <p class="faq-answer">Through your Google Play account settings. Go to Play Store → Subscriptions → cancel anytime.</p>
+  </details>
+
+  <details>
+    <summary>How do I delete my account?</summary>
+    <p class="faq-answer">If you'd like to delete your account and data, head to <a href="delete-account.html">personalab.com.au/delete-account</a> and submit a request. We'll action it within 30 days.</p>
+  </details>
+
+  <div class="support-block">
+    <p>Still have a question? We're happy to help.</p>
+    <a href="mailto:support@personalab.com.au">support@personalab.com.au</a>
+  </div>
+</div>
+
+<hr class="rainbow-divider" style="position:relative;z-index:1;" />
+
+<footer>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="terms.html">User Agreement</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Persona Lab. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
