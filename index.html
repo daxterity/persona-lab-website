@@ -264,24 +264,67 @@
     }
 
     .feature-row {
+      position: relative;
       display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 32px;
-      align-items: start;
-      padding: 40px 0;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      grid-template-columns: 120px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 48px 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
       text-align: left;
-      transition: background 0.2s;
+      overflow: hidden;
+      transition: background 0.4s;
+      border-radius: 4px;
     }
 
-    .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+    .feature-row:hover { background: rgba(255,255,255,0.02); }
+
+    /* Sweep line on hover */
+    .feature-row::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 1px;
+      width: 0;
+      transition: width 0.6s ease;
+    }
+    .feature-row:hover::after { width: 100%; }
+    .feature-row:nth-child(1)::after { background: linear-gradient(90deg, #FF1A1A, #FFA300, transparent); }
+    .feature-row:nth-child(2)::after { background: linear-gradient(90deg, #00A8B5, #12B24B, transparent); }
+    .feature-row:nth-child(3)::after { background: linear-gradient(90deg, #124CFF, #5B11CC, transparent); }
+    .feature-row:nth-child(4)::after { background: linear-gradient(90deg, #5B11CC, #9d4fd6, transparent); }
+
+    /* Ghost number behind */
+    .feature-num-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+
+    .feature-ghost {
+      position: absolute;
+      font-family: 'DM Serif Display', serif;
+      font-size: 160px;
+      line-height: 1;
+      color: rgba(255,255,255,0.03);
+      user-select: none;
+      pointer-events: none;
+      transition: color 0.4s;
+    }
+
+    .feature-row:hover .feature-ghost { color: rgba(255,255,255,0.055); }
 
     .feature-number {
-      font-family: 'DM Serif Display', serif;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      padding-top: 4px;
+      position: relative;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      transition: text-shadow 0.4s;
     }
 
     .feature-row:nth-child(1) .feature-number { color: #FFA300; }
@@ -289,12 +332,15 @@
     .feature-row:nth-child(3) .feature-number { color: #124CFF; }
     .feature-row:nth-child(4) .feature-number { color: #9d4fd6; }
 
-    .feature-content {}
+    .feature-row:nth-child(1):hover .feature-number { text-shadow: 0 0 20px rgba(255,163,0,0.8); }
+    .feature-row:nth-child(2):hover .feature-number { text-shadow: 0 0 20px rgba(0,168,181,0.8); }
+    .feature-row:nth-child(3):hover .feature-number { text-shadow: 0 0 20px rgba(18,76,255,0.8); }
+    .feature-row:nth-child(4):hover .feature-number { text-shadow: 0 0 20px rgba(157,79,214,0.8); }
 
     .feature-title {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
       margin-bottom: 10px;
       color: var(--white);
     }
@@ -494,28 +540,40 @@
 
   <div class="features">
     <div class="feature-row">
-      <div class="feature-number">01</div>
+      <div class="feature-num-wrap">
+        <span class="feature-ghost">01</span>
+        <span class="feature-number">01</span>
+      </div>
       <div class="feature-content">
         <div class="feature-title">Authentic Characters</div>
         <div class="feature-text">Every character is built from the ground up — voice, history, opinions, quirks. No generic AI personas. Real characters with depth.</div>
       </div>
     </div>
     <div class="feature-row">
-      <div class="feature-number">02</div>
+      <div class="feature-num-wrap">
+        <span class="feature-ghost">02</span>
+        <span class="feature-number">02</span>
+      </div>
       <div class="feature-content">
         <div class="feature-title">Real-World Aware</div>
         <div class="feature-text">Our characters live in the real world. They know what's happening, what's on, and what matters — because great characters stay relevant.</div>
       </div>
     </div>
     <div class="feature-row">
-      <div class="feature-number">03</div>
+      <div class="feature-num-wrap">
+        <span class="feature-ghost">03</span>
+        <span class="feature-number">03</span>
+      </div>
       <div class="feature-content">
         <div class="feature-title">Built for Connection</div>
         <div class="feature-text">Entertainment built around genuine connection. Characters that make you laugh, keep you company, and give you something to come back for.</div>
       </div>
     </div>
     <div class="feature-row">
-      <div class="feature-number">04</div>
+      <div class="feature-num-wrap">
+        <span class="feature-ghost">04</span>
+        <span class="feature-number">04</span>
+      </div>
       <div class="feature-content">
         <div class="feature-title">Personal Development</div>
         <div class="feature-text">AI tools built for growth and self-understanding. Not productivity apps — intelligent companions that learn who you are and help you become more of it.</div>
