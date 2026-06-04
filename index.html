@@ -256,61 +256,55 @@
 
     .section-body p + p { margin-top: 20px; }
 
-    /* Pill cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+    /* Feature rows */
+    .features {
       margin-top: 64px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 40px 36px;
-      transition: border-color 0.3s, background 0.3s;
-      position: relative;
-      overflow: hidden;
+    .feature-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: left;
+      transition: background 0.2s;
     }
 
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
+    .feature-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
 
-    .card:nth-child(1)::before { background: linear-gradient(90deg, #FF1A1A, #FFA300); }
-    .card:nth-child(2)::before { background: linear-gradient(90deg, #12B24B, #00A8B5); }
-    .card:nth-child(3)::before { background: linear-gradient(90deg, #124CFF, #5B11CC); }
-    .card:nth-child(4)::before { background: linear-gradient(90deg, #5B11CC, #9d4fd6); }
-
-    .card:hover {
-      border-color: rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.07);
-    }
-
-    .card-number {
+    .feature-number {
       font-family: 'DM Serif Display', serif;
-      font-size: 48px;
-      color: rgba(255,255,255,0.08);
-      line-height: 1;
-      margin-bottom: 16px;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      padding-top: 4px;
     }
 
-    .card-title {
-      font-size: 18px;
+    .feature-row:nth-child(1) .feature-number { color: #FFA300; }
+    .feature-row:nth-child(2) .feature-number { color: #00A8B5; }
+    .feature-row:nth-child(3) .feature-number { color: #124CFF; }
+    .feature-row:nth-child(4) .feature-number { color: #9d4fd6; }
+
+    .feature-content {}
+
+    .feature-title {
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 12px;
       letter-spacing: -0.01em;
+      margin-bottom: 10px;
+      color: var(--white);
     }
 
-    .card-text {
+    .feature-text {
       font-size: 15px;
       font-weight: 300;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+      max-width: 560px;
     }
 
     /* ── COMING SOON ── */
@@ -498,26 +492,34 @@
     <p>On the personal development side, we build AI tools designed for self-understanding and growth. Our flagship product is Kairos — a witnessing intelligence that sees who you actually are, learns your patterns over time, and helps you move from knowing to becoming.</p>
   </div>
 
-  <div class="cards">
-    <div class="card">
-      <div class="card-number">01</div>
-      <div class="card-title">Authentic Characters</div>
-      <div class="card-text">Every character is built from the ground up — voice, history, opinions, quirks. No generic AI personas. Real characters with depth.</div>
+  <div class="features">
+    <div class="feature-row">
+      <div class="feature-number">01</div>
+      <div class="feature-content">
+        <div class="feature-title">Authentic Characters</div>
+        <div class="feature-text">Every character is built from the ground up — voice, history, opinions, quirks. No generic AI personas. Real characters with depth.</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-number">02</div>
-      <div class="card-title">Real-World Aware</div>
-      <div class="card-text">Our characters live in the real world. They know what's happening, what's on, and what matters — because great characters stay relevant.</div>
+    <div class="feature-row">
+      <div class="feature-number">02</div>
+      <div class="feature-content">
+        <div class="feature-title">Real-World Aware</div>
+        <div class="feature-text">Our characters live in the real world. They know what's happening, what's on, and what matters — because great characters stay relevant.</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-number">03</div>
-      <div class="card-title">Built for Connection</div>
-      <div class="card-text">Entertainment built around genuine connection. Characters that make you laugh, keep you company, and give you something to come back for.</div>
+    <div class="feature-row">
+      <div class="feature-number">03</div>
+      <div class="feature-content">
+        <div class="feature-title">Built for Connection</div>
+        <div class="feature-text">Entertainment built around genuine connection. Characters that make you laugh, keep you company, and give you something to come back for.</div>
+      </div>
     </div>
-    <div class="card">
-      <div class="card-number">04</div>
-      <div class="card-title">Personal Development</div>
-      <div class="card-text">AI tools built for growth and self-understanding. Not productivity apps — intelligent companions that learn who you are and help you become more of it.</div>
+    <div class="feature-row">
+      <div class="feature-number">04</div>
+      <div class="feature-content">
+        <div class="feature-title">Personal Development</div>
+        <div class="feature-text">AI tools built for growth and self-understanding. Not productivity apps — intelligent companions that learn who you are and help you become more of it.</div>
+      </div>
     </div>
   </div>
 </section>
